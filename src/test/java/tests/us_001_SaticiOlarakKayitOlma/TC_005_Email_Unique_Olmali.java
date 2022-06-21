@@ -10,7 +10,7 @@ import utulities.ConfigReader;
 import utulities.Driver;
 import utulities.TestBaseReport;
 
-public class TC_004_Hatali_Email_le_Kaydolunamaz  extends TestBaseReport {
+public class TC_005_Email_Unique_Olmali extends TestBaseReport {
 
     @Test
     public static void hataliEmailIleGirisYapamaz() throws InterruptedException {
@@ -41,8 +41,8 @@ public class TC_004_Hatali_Email_le_Kaydolunamaz  extends TestBaseReport {
 
         action.sendKeys(Keys.PAGE_DOWN).perform();
 
-        registrationPage.emailSekmesi.sendKeys(ConfigReader.getProperty("hataliMail"));
-        extentTest.info("Mail sekmesina hatalı bir email giriniz");
+        registrationPage.emailSekmesi.sendKeys(ConfigReader.getProperty("mail1"));
+        extentTest.info("Mail sekmesina daha önce koydolmuş bir hesabın mail adresini giriniz");
 
         registrationPage.passwordSekmesi.sendKeys(ConfigReader.getProperty("sifreMail1"));
         registrationPage.confirmPasswordSekmesi.sendKeys(ConfigReader.getProperty("sifreMail1"));
