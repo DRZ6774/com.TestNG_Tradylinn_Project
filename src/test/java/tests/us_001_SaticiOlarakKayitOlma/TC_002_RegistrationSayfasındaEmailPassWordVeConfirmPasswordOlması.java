@@ -1,4 +1,4 @@
-package tests.saticiOlarakKayitOlma;
+package tests.us_001_SaticiOlarakKayitOlma;
 
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;

@@ -1,4 +1,4 @@
-package tests.saticiOlarakKayitOlma;
+package tests.us_001_SaticiOlarakKayitOlma;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -8,13 +8,15 @@ import utulities.ConfigReader;
 import utulities.Driver;
 import utulities.TestBaseReport;
 
-public class TC_004_Hatali_Email_le_Kaydolunamaz  extends TestBaseReport {
+public class TC_001_SaticiOlarakKayitOlma extends TestBaseReport {
+
 
     @Test
     public static void TC_001() throws InterruptedException {
 
         MainPage mainPage=new MainPage();
         RegistrationPage registrationPage=new RegistrationPage();
+
 
         extentTest=extentReports.
                 createTest("Vendor olarak kayıt icin ‘Become a vendor’ butonu ile navigate ediniz");
@@ -30,7 +32,7 @@ public class TC_004_Hatali_Email_le_Kaydolunamaz  extends TestBaseReport {
         mainPage.uyeOlSelmesi.click();
         extentTest.info("Üye ol sekmesine basiniz.");
 
-        mainPage.signUpAsAVendorLinki.click();
+       mainPage.signUpAsAVendorLinki.click();
         extentTest.info("signUp as a vendor sekmesine basınız.");
 
         registrationPage.emailSekmesi.sendKeys(ConfigReader.getProperty("mail1"));
@@ -54,4 +56,6 @@ public class TC_004_Hatali_Email_le_Kaydolunamaz  extends TestBaseReport {
 
 
     }
+
+
 }

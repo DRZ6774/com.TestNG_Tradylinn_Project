@@ -12,10 +12,10 @@ public class MainPage {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
+
+
     @FindBy(xpath = ("//span[text()='Giriş Yap']"))
     public WebElement girisYap_UyeOlSekmesi;
-
-
 
     @FindBy(xpath = ("//a[@href='signup']"))
     public WebElement uyeOlSelmesi;

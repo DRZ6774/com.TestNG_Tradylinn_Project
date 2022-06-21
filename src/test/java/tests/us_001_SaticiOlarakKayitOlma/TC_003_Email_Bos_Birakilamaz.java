@@ -1,10 +1,9 @@
-package tests.saticiOlarakKayitOlma;
+package tests.us_001_SaticiOlarakKayitOlma;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 import pages.MainPage;
 import pages.RegistrationPage;
 import utulities.ConfigReader;
