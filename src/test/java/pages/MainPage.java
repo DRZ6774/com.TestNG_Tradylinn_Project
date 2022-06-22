@@ -34,4 +34,12 @@ public class MainPage {
 
     @FindBy(xpath = "(//i[@class='w-icon-cart'])[1]")
     public  WebElement alisverisSepeti;
+
+
+    @FindBy(xpath = "(//a[@href='https://tradylinn.com/my-account-2/'])")
+    public WebElement hesabim;
+
+    @FindBy(xpath = "(//a[@href='https://tradylinn.com/my-account-2/'])[2]")
+    public WebElement hesabimPano;
+
 }

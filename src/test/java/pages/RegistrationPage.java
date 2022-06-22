@@ -27,6 +27,10 @@ public class RegistrationPage {
     @FindBy(xpath="//div[@class='wcfm_membership_thankyou_content']")
     public  WebElement aktivasyonMailiMesajı;
 
+@FindBy(xpath="//p[text()='Wrong username or password.']")
+    public  WebElement hataMesaji_WrongPassOrEmail;
+
+
 
 
 
