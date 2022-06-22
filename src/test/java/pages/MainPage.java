@@ -22,4 +22,12 @@ public class MainPage {
 
     @FindBy(xpath = "(//a[@href='https://tradylinn.com/vendor-register/'])[1]")
     public  WebElement signUpAsAVendorLinki;
+
+    @FindBy(xpath = "(//input[@class='woocommerce-Input woocommerce-Input--text input-text'])[1]")
+    public  WebElement girisEmail;
+
+    @FindBy(xpath = "(//input[@class='woocommerce-Input woocommerce-Input--text input-text'])[2]")
+    public  WebElement girisSifre;
+    @FindBy(xpath = "(//button[@type='submit'])[1]")
+    public  WebElement girisButonu;
 }
