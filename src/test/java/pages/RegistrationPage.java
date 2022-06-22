@@ -33,7 +33,7 @@ public class RegistrationPage {
 
 
 
-// MEHMET MAGDEN
+    // MEHMET MAGDEN
     @FindBy (xpath = "//button[@value='Giriş Yap']")
     public WebElement girisYapButton;
 

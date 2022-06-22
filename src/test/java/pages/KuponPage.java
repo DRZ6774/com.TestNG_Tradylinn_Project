@@ -35,6 +35,9 @@ public class KuponPage {
     @FindBy (xpath = "//textarea[@id='description']")
     public WebElement descriptionTextBox;
 
+    @FindBy(xpath = "//select[@id='discount_type']")
+    public WebElement discountTypeDropBox;
+
 
 
 }

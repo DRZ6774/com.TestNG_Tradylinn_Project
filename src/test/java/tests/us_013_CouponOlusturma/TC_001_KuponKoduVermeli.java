@@ -24,6 +24,8 @@ public class TC_001_KuponKoduVermeli extends TestBaseReport {
 
     @Test
     public void test01() {
+
+
         extentTest= extentReports.createTest("kupon olusturulabilmeli");
 
         Driver.getDriver().get(ConfigReader.getProperty("mainPage"));

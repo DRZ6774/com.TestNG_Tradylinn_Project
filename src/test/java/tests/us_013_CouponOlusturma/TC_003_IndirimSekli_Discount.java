@@ -2,6 +2,7 @@ package tests.us_013_CouponOlusturma;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.*;
@@ -53,13 +54,11 @@ public class TC_003_IndirimSekli_Discount extends TestBaseReport {
         extentTest.info("Deneme123 kuponuna tiklandi");
 
 
+        Select select = new Select(kuponPage.discountTypeDropBox);
+        select.selectByIndex(0);
 
 
-        
-
-
-        kuponPage.descriptionTextBox.sendKeys(ConfigReader.getProperty("kupon01Description"));
-        extentTest.info("kupon description olarak Hersey sizin icin yazildi");
+        extentTest.info("'Discount Type' olarak 'Percentage discount' secildi");
 
 
 
