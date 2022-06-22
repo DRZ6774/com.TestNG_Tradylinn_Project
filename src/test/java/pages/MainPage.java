@@ -28,6 +28,10 @@ public class MainPage {
 
     @FindBy(xpath = "(//input[@class='woocommerce-Input woocommerce-Input--text input-text'])[2]")
     public  WebElement girisSifre;
+
     @FindBy(xpath = "(//button[@type='submit'])[1]")
     public  WebElement girisButonu;
+
+    @FindBy(xpath = "(//i[@class='w-icon-cart'])[1]")
+    public  WebElement alisverisSepeti;
 }

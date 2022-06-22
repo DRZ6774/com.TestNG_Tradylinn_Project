@@ -16,10 +16,6 @@ public class TC_008_Password_Yeniden_Kullanilabilmeli extends TestBaseReport {
     public static void TC_001() throws InterruptedException {
 
         MainPage mainPage = new MainPage();
-        RegistrationPage registrationPage = new RegistrationPage();
-        Actions action=new Actions(Driver.getDriver());
-
-
 
         extentTest=extentReports.
                 createTest("Güçlü bir password olusturulmali: kucuk harf, büyük harf, rakam ve special karakter kullanılmalı");
@@ -44,9 +40,9 @@ public class TC_008_Password_Yeniden_Kullanilabilmeli extends TestBaseReport {
         mainPage.girisButonu.click();
         extentTest.info("Giris yap butonuna basınız.");
 
-        Assert.assertTrue(registrationPage.aktivasyonMailiMesajı.isDisplayed());
+        Assert.assertTrue(mainPage.alisverisSepeti.isDisplayed());
 
-        extentTest.info("Daha önce kaydolmuş hesabın aynı şifre ile giriş yapabildiğini doğrulayınız.");
+        extentTest.pass("Daha önce kaydolmuş hesabın aynı şifre ile giriş yapabildiğini doğrulayınız.");
 
 
 
