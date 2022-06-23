@@ -2,6 +2,9 @@ package pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.apache.commons.compress.archivers.zip.X000A_NTFS;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utulities.Driver;
 
@@ -42,4 +45,21 @@ public class MainPage {
     @FindBy(xpath = "(//a[@href='https://tradylinn.com/my-account-2/'])[2]")
     public WebElement hesabimPano;
 
+
+
+
+    @FindBy(xpath = ("//span[text()='Giriş Yap']"))
+    public WebElement girisYap_UyeOlSekmesi;
+
+    @FindBy(xpath = ("//a[@href='signup']"))
+    public WebElement uyeOlSelmesi;
+
+    @FindBy(xpath = "(//a[@href='https://tradylinn.com/vendor-register/'])[1]")
+    public  WebElement signUpAsAVendorLinki;
+
+
+
+    //MEHMET MAGDEN
+    @FindBy (xpath = "//a[text()='Hesabım']")
+    public WebElement hesabimSekmesi;
 }
