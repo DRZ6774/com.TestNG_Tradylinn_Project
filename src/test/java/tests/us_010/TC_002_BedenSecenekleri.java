@@ -1,28 +1,27 @@
 package tests.us_010;
-//import org.openqa.selenium.interactions.Actions;
+
 import org.testng.annotations.Test;
 import pages.TradylinnPage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.TestBaseReport;
 
-public class TC_001  {
+public class TC_002_BedenSecenekleri {
 
     TradylinnPage tradylinnPage;
-   // Actions actions=new Actions(Driver.getDriver());
 
     @Test
-    public void renkSecenegi() throws InterruptedException {
-        new TradylinnPage();
+    public void test02() {
+
+        tradylinnPage = new TradylinnPage();
 
         Driver.getDriver().get(ConfigReader.getProperty("tradylinnUrl"));
 
         tradylinnPage.anaSayfaGirisYapButonu.click();
 
         tradylinnPage.kullaniciAdiButonu.sendKeys(ConfigReader.getProperty("tradylinnValidKullaniciAdi"));
-        Thread.sleep(5000);
 
         tradylinnPage.parolaButonu.sendKeys(ConfigReader.getProperty("tradylinnValidParola"));
-        //actions.click(tradylinnPage.parolaButonu).sendKeys(ConfigReader.getProperty("tradylinnValidParola")).perform();
 
         tradylinnPage.girisYapButonu.click();
 
@@ -36,9 +35,9 @@ public class TC_001  {
 
         tradylinnPage.attributesButonu.click();
 
-        tradylinnPage.colorKutucugu.click();
+        tradylinnPage.sizeKutucugu.click();
 
-        tradylinnPage.colorArama.click();
+        tradylinnPage.sizeArama.click();
 
 
 

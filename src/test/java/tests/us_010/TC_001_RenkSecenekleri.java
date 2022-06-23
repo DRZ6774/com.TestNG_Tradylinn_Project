@@ -1,18 +1,16 @@
 package tests.us_010;
-
 import org.testng.annotations.Test;
 import pages.TradylinnPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 
-public class TC_002 {
+public class TC_001_RenkSecenekleri {
 
     TradylinnPage tradylinnPage;
 
     @Test
-    public void sizeSecenegi() {
-
-        new TradylinnPage();
+    public void test01() throws InterruptedException {
+        tradylinnPage = new TradylinnPage();
 
         Driver.getDriver().get(ConfigReader.getProperty("tradylinnUrl"));
 
@@ -24,9 +22,13 @@ public class TC_002 {
 
         tradylinnPage.girisYapButonu.click();
 
+        Thread.sleep(10000);
+
         tradylinnPage.hesabimButonu.click();
 
         tradylinnPage.storeManagerButonu.click();
+
+        Thread.sleep(10000);
 
         tradylinnPage.urunButonu.click();
 
@@ -34,9 +36,9 @@ public class TC_002 {
 
         tradylinnPage.attributesButonu.click();
 
-        tradylinnPage.sizeKutucugu.click();
+        tradylinnPage.colorKutucugu.click();
 
-        tradylinnPage.sizeArama.click();
+        tradylinnPage.colorArama.click();
 
 
 

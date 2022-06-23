@@ -20,13 +20,13 @@ public class TradylinnPage {
     @FindBy(xpath = "//button[@name='login']")
     public WebElement girisYapButonu;
 
-    @FindBy(xpath = "//*[text()='Hesabım'])[1]")
+    @FindBy(xpath = "(//a[@href='https://tradylinn.com/my-account-2/'])")
     public WebElement hesabimButonu;
 
     @FindBy(xpath = "//a[@href='https://tradylinn.com/store-manager/']")
     public WebElement storeManagerButonu;
 
-    @FindBy(xpath = "//span[@class='text'])[4]")
+    @FindBy(xpath = "(//span[@class='text'])[4]")
     public WebElement urunButonu;
 
     @FindBy(xpath= "//span[@class='text'])[16]")
@@ -49,6 +49,15 @@ public class TradylinnPage {
 
     @FindBy(xpath = "(//*[@class='select2-selection__rendered'])[4]")
     public WebElement sizeArama;
+
+    @FindBy(xpath = "(//span[@class='text'])[19]")
+    public WebElement productReviewsButonu;
+
+    @FindBy(xpath = "(//div[@class='wcfmmp-author-meta'])[3]")
+    public WebElement kullaniciBilgisi;
+
+    @FindBy(xpath = "(//div[@class='wcfmmp-comments-content'])[3]")
+    public WebElement kullaniciYorumu;
 
 
 
