@@ -48,14 +48,7 @@ public class MainPage {
 
 
 
-    @FindBy(xpath = ("//span[text()='Giriş Yap']"))
-    public WebElement girisYap_UyeOlSekmesi;
 
-    @FindBy(xpath = ("//a[@href='signup']"))
-    public WebElement uyeOlSelmesi;
-
-    @FindBy(xpath = "(//a[@href='https://tradylinn.com/vendor-register/'])[1]")
-    public  WebElement signUpAsAVendorLinki;
 
 
 
