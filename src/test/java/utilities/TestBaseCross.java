@@ -1,4 +1,4 @@
-package utulities;
+package utilities;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
@@ -16,14 +16,14 @@ public class TestBaseCross {
     @BeforeMethod
     public void setUp(@Optional String browser){
 
-        driver=CrossDriver.getDriver(browser);
+       driver= utilities.CrossDriver.getDriver(browser);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
     }
 
-    @AfterMethod
+   @AfterMethod
     public static void tearDown(){
-        CrossDriver.closeDriver();
+       utilities.CrossDriver.closeDriver();
     }
 
 
