@@ -8,8 +8,6 @@ import utilities.Driver;
 import utilities.ReusableMethods;
 import utilities.TestBaseReport;
 
-import static utilities.TestBaseReport.extentReports;
-
 public class
 TC_001_RenkSecenekleri extends TestBaseReport {
 
@@ -58,7 +56,8 @@ TC_001_RenkSecenekleri extends TestBaseReport {
         extentTest.info("Pantolon butonuna tiklandi");
 
         actions.sendKeys(Keys.PAGE_DOWN).perform();
-        ReusableMethods.waitFor(3);
+        ReusableMethods.waitFor(2);
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
         tradylinnPage.attributesButonu.click();
         extentTest.info("Attributes butonuna tiklandi");
 

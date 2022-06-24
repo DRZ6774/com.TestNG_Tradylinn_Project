@@ -9,8 +9,6 @@ import utilities.Driver;
 import utilities.ReusableMethods;
 import utilities.TestBaseReport;
 
-import static utilities.TestBaseReport.extentReports;
-
 public class TC_002_KullaniciDegerlendirmeVeYorumTarihi extends TestBaseReport {
 
     TradylinnPage tradylinnPage;
@@ -48,7 +46,8 @@ public class TC_002_KullaniciDegerlendirmeVeYorumTarihi extends TestBaseReport {
             extentTest.info("Store manager butonuna tiklandi");
 
             actions.sendKeys(Keys.PAGE_DOWN).perform();
-            ReusableMethods.waitFor(3);
+            ReusableMethods.waitFor(2);
+            actions.sendKeys(Keys.PAGE_DOWN).perform();
             tradylinnPage.incelemelerButonu.click();
             extentTest.info("İncelemeler butonuna tiklandi");
 

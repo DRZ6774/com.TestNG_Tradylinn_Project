@@ -10,8 +10,6 @@ import utilities.Driver;
 import utilities.ReusableMethods;
 import utilities.TestBaseReport;
 
-import static utilities.TestBaseReport.extentReports;
-
 public class TC_001_KullaniciBilgisiVeYorumu extends TestBaseReport {
 
     TradylinnPage tradylinnPage;
