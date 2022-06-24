@@ -5,14 +5,15 @@ import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pages.UrunPage;
-import utilities.ConfigReader;
-import utilities.Driver;
-import utilities.TestBaseRapor;
+import utulities.ConfigReader;
+import utulities.Driver;
+import utulities.TestBaseReport;
+
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class US05_TC01 extends TestBaseRapor{
+public class US05_TC01 extends TestBaseReport {
     UrunPage urunPage =new UrunPage();
     SoftAssert softAssert=new SoftAssert();
 

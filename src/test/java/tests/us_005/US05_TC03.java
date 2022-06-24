@@ -2,21 +2,22 @@ package tests.us_005;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pages.UrunPage;
-import utilities.ConfigReader;
-import utilities.Driver;
-import utilities.ReusableMethods;
-import utilities.TestBaseRapor;
+import utulities.ConfigReader;
+import utulities.Driver;
+import utulities.ReusableMethods;
+import utulities.TestBaseReport;
 
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.util.Set;
 
-public class US05_TC03 extends TestBaseRapor {
+public class US05_TC03 extends TestBaseReport {
     UrunPage urunPage = new UrunPage();
     SoftAssert softAssert = new SoftAssert();
     Actions actions=new Actions(Driver.getDriver());
