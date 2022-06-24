@@ -11,7 +11,7 @@ public class UrunPage {
     public UrunPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
-
+    
     @FindBy (xpath = "//a[@class='login inline-type']")
     public WebElement girisYap;
 
