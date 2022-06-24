@@ -59,6 +59,14 @@ public class TradylinnPage {
     @FindBy(xpath = "(//div[@class='wcfmmp-comments-content'])[3]")
     public WebElement kullaniciYorumu;
 
+    @FindBy(xpath = "(//span[@style='width:100%'])[2]")
+    public WebElement kullaniciPuani;
+
+    @FindBy(xpath = "(//td)[27]")
+    public WebElement kullaniciYorumTarihi;
+
+    
+
 
 
 
