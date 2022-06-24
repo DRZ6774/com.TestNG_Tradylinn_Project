@@ -1,9 +1,12 @@
 package tests.us_020;
 
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 import pages.TradylinnPage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
 import utilities.TestBaseReport;
 
 import static utilities.TestBaseReport.extentReports;
@@ -14,6 +17,8 @@ public class TC_002_KullaniciDegerlendirmeVeYorumTarihi extends TestBaseReport {
 
         @Test
         public void test02() throws InterruptedException {
+
+            Actions actions = new Actions(Driver.getDriver());
 
             extentTest = extentReports.createTest("test02","Kullanici degerlendirme ve yorum tarihi");
 
@@ -42,6 +47,8 @@ public class TC_002_KullaniciDegerlendirmeVeYorumTarihi extends TestBaseReport {
             tradylinnPage.storeManagerButonu.click();
             extentTest.info("Store manager butonuna tiklandi");
 
+            actions.sendKeys(Keys.PAGE_DOWN).perform();
+            ReusableMethods.waitFor(3);
             tradylinnPage.incelemelerButonu.click();
             extentTest.info("İncelemeler butonuna tiklandi");
 

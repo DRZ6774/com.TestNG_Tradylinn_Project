@@ -1,9 +1,13 @@
 package tests.us_020;
 
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 import pages.TradylinnPage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
 import utilities.TestBaseReport;
 
 import static utilities.TestBaseReport.extentReports;
@@ -14,6 +18,8 @@ public class TC_001_KullaniciBilgisiVeYorumu extends TestBaseReport {
 
         @Test
         public void test01() throws InterruptedException {
+
+            Actions actions = new Actions(Driver.getDriver());
 
             extentTest = extentReports.createTest("test01","Kullanici bilgisi ve yorumu");
 
@@ -42,6 +48,9 @@ public class TC_001_KullaniciBilgisiVeYorumu extends TestBaseReport {
             tradylinnPage.storeManagerButonu.click();
             extentTest.info("Store manager butonuna tiklandi");
 
+            actions.sendKeys(Keys.PAGE_DOWN).perform();
+            ReusableMethods.waitFor(2);
+            actions.sendKeys(Keys.PAGE_DOWN).perform();
             tradylinnPage.incelemelerButonu.click();
             extentTest.info("İncelemeler butonuna tiklandi");
 

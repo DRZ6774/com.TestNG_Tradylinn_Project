@@ -1,18 +1,24 @@
 package tests.us_010;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 import pages.TradylinnPage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
 import utilities.TestBaseReport;
 
 import static utilities.TestBaseReport.extentReports;
 
-public class TC_001_RenkSecenekleri extends TestBaseReport {
+public class
+TC_001_RenkSecenekleri extends TestBaseReport {
 
     TradylinnPage tradylinnPage;
 
     @Test
     public void test01() throws InterruptedException {
+
+        Actions actions = new Actions(Driver.getDriver());
 
         extentTest = extentReports.createTest("test01","Renk secenekleri");
 
@@ -41,12 +47,18 @@ public class TC_001_RenkSecenekleri extends TestBaseReport {
         tradylinnPage.storeManagerButonu.click();
         extentTest.info("Store manager butonuna tiklandi");
 
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        ReusableMethods.waitFor(2);
         tradylinnPage.urunButonu.click();
         extentTest.info("Ürün butonuna tiklandi");
 
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        ReusableMethods.waitFor(2);
         tradylinnPage.pantolonButonu.click();
         extentTest.info("Pantolon butonuna tiklandi");
 
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        ReusableMethods.waitFor(3);
         tradylinnPage.attributesButonu.click();
         extentTest.info("Attributes butonuna tiklandi");
 

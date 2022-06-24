@@ -26,17 +26,17 @@ public class TradylinnPage {
     @FindBy(xpath = "//a[@href='https://tradylinn.com/store-manager/']")
     public WebElement storeManagerButonu;
 
-    @FindBy(xpath = "(//span[@class='text'])[4]")
+    @FindBy(xpath = "(//a[@class='wcfm_menu_item '])[3]")
     public WebElement urunButonu;
 
     @FindBy(xpath= "//span[@class='text'])[16]")
     public WebElement incelemelerButonu;
 
-    @FindBy(xpath = "(//a[@class='wcfm_product_title'])[8]")
+    @FindBy(xpath = "(//a[@class='wcfm_product_title'])[2]")
     public WebElement pantolonButonu;
 
-    @FindBy(xpath = "(//div[@class='page_collapsible_content_holder'])[9]")
-     public WebElement attributesButonu;
+    @FindBy(xpath = "//div[@id='wcfm_products_manage_form_attribute_head']")
+    public WebElement attributesButonu;
 
     @FindBy(xpath = "//input[@name='attributes[1][is_active]']")
     public WebElement colorKutucugu;
