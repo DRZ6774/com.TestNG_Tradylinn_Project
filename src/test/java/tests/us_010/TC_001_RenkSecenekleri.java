@@ -1,6 +1,9 @@
 package tests.us_010;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.TradylinnPage;
 import utilities.ConfigReader;
@@ -55,21 +58,28 @@ TC_001_RenkSecenekleri extends TestBaseReport {
         tradylinnPage.pantolonButonu.click();
         extentTest.info("Pantolon butonuna tiklandi");
 
-        actions.sendKeys(Keys.PAGE_DOWN).perform();
+       /* actions.sendKeys(Keys.PAGE_DOWN).perform();
         ReusableMethods.waitFor(2);
         actions.sendKeys(Keys.PAGE_DOWN).perform();
-        tradylinnPage.attributesButonu.click();
+        ReusableMethods.waitFor(2);
+        tradylinnPage.attributesButonu.click();*/
+
+        WebElement willGoAndDoWork = tradylinnPage.attributesButonu;      //just changing this part do the magic
+        JavascriptExecutor jse = (JavascriptExecutor)Driver.getDriver();
+        jse.executeScript("arguments[0].scrollIntoView()", willGoAndDoWork);
+        ReusableMethods.waitFor(1);
+        ReusableMethods.waitForClickablility(willGoAndDoWork,15);
+        willGoAndDoWork.click();
         extentTest.info("Attributes butonuna tiklandi");
 
         tradylinnPage.colorKutucugu.click();
-        extentTest.info("Color kutucuguna tiklandi");
+        extentTest.info("Color kut ucuguna tiklandi");
 
         tradylinnPage.colorArama.click();
         extentTest.info("Color arama butonuna tiklandi");
 
-
-
-
+        Assert.assertTrue(tradylinnPage.colorArama.isDisplayed());
+        extentTest.info("Color cesitlerinin görünürlügü test edildi");
 
 
 
