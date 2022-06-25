@@ -1,20 +1,15 @@
 package tests.us_001_SaticiOlarakKayitOlma;
 
-import com.aventstack.extentreports.ExtentTest;
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.GmailPage;
 import pages.MainPage;
 import pages.RegistrationPage;
 import utulities.ConfigReader;
 import utulities.Driver;
 import utulities.TestBaseReport;
 
-import java.util.List;
 import java.util.Set;
 
 public class TC_009_Email_Uzerinden_Account_Onaylanmalı extends TestBaseReport {
