@@ -2,11 +2,8 @@ package pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.apache.commons.compress.archivers.zip.X000A_NTFS;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import utulities.Driver;
+import utilities.Driver;
 
 public class MainPage {
 

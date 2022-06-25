@@ -3,9 +3,9 @@ package tests.us_002_VendorOlarakSignInYapılabilmeli;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.MainPage;
-import utulities.ConfigReader;
-import utulities.Driver;
-import utulities.TestBaseReport;
+import utilities.ConfigReader;
+import utilities.Driver;
+import utilities.TestBaseReport;
 
 public class TC_002_Vendor_Giris_KullaniciAdi_Dogru_Sifre_Dogru extends TestBaseReport {
 
