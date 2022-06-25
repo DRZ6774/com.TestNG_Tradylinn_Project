@@ -73,7 +73,7 @@ TC_001_RenkSecenekleri extends TestBaseReport {
         extentTest.info("Attributes butonuna tiklandi");
 
         tradylinnPage.colorKutucugu.click();
-        extentTest.info("Color kut ucuguna tiklandi");
+        extentTest.info("Color kutucuguna tiklandi");
 
         tradylinnPage.colorArama.click();
         extentTest.info("Color arama butonuna tiklandi");

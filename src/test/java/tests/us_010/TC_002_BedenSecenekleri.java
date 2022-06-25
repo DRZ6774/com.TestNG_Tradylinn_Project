@@ -1,7 +1,10 @@
 package tests.us_010;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.TradylinnPage;
 import utilities.ConfigReader;
@@ -55,10 +58,18 @@ public class TC_002_BedenSecenekleri extends TestBaseReport{
         tradylinnPage.pantolonButonu.click();
         extentTest.info("Pantolon butonuna tiklandi");
 
-        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        /*actions.sendKeys(Keys.PAGE_DOWN).perform();
         ReusableMethods.waitFor(2);
         actions.sendKeys(Keys.PAGE_DOWN).perform();
-        tradylinnPage.attributesButonu.click();
+        ReusableMethods.waitFor(2);
+        tradylinnPage.attributesButonu.click(); */
+
+        WebElement willGoAndDoWork = tradylinnPage.attributesButonu;      //just changing this part do the magic
+        JavascriptExecutor jse = (JavascriptExecutor)Driver.getDriver();
+        jse.executeScript("arguments[0].scrollIntoView()", willGoAndDoWork);
+        ReusableMethods.waitFor(1);
+        ReusableMethods.waitForClickablility(willGoAndDoWork,15);
+        willGoAndDoWork.click();
         extentTest.info("Attributes butonuna tiklandi");
 
         tradylinnPage.sizeKutucugu.click();
@@ -67,9 +78,8 @@ public class TC_002_BedenSecenekleri extends TestBaseReport{
         tradylinnPage.sizeArama.click();
         extentTest.info("Size arama butonuna tiklandi");
 
-
-
-
+        Assert.assertTrue(tradylinnPage.sizeArama.isDisplayed());
+        extentTest.info("Size cesitlerinin görünürlügü test edildi");
 
 
     }

@@ -29,7 +29,7 @@ public class TradylinnPage {
     @FindBy(xpath = "(//a[@class='wcfm_menu_item '])[3]")
     public WebElement urunButonu;
 
-    @FindBy(xpath= "//span[@class='text'])[16]")
+    @FindBy(xpath= "(//span[contains(text(),'incelemeler')])[1]")
     public WebElement incelemelerButonu;
 
     @FindBy(xpath = "(//a[@class='wcfm_product_title'])[2]")

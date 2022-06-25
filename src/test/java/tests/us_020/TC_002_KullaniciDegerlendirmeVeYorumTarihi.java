@@ -2,6 +2,7 @@ package tests.us_020;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.TradylinnPage;
 import utilities.ConfigReader;
@@ -54,16 +55,11 @@ public class TC_002_KullaniciDegerlendirmeVeYorumTarihi extends TestBaseReport {
             tradylinnPage.productReviewsButonu.click();
             extentTest.info("Product reviews butonuna tiklandi");
 
-            tradylinnPage.kullaniciPuani.isDisplayed();
+            Assert.assertTrue(tradylinnPage.kullaniciPuani.isDisplayed());
             extentTest.info("Kullanici degerlendirmesinin görülebilir oldugu test edildi");
 
-            tradylinnPage.kullaniciYorumTarihi.isDisplayed();
+            Assert.assertTrue(tradylinnPage.kullaniciYorumTarihi.isDisplayed());
             extentTest.info("Kullanici yorum tarihinin görülebilir oldugu test edildi");
-
-
-
-
-
 
 
         }

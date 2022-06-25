@@ -3,6 +3,7 @@ package tests.us_020;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.TradylinnPage;
 import utilities.ConfigReader;
@@ -49,17 +50,19 @@ public class TC_001_KullaniciBilgisiVeYorumu extends TestBaseReport {
             actions.sendKeys(Keys.PAGE_DOWN).perform();
             ReusableMethods.waitFor(2);
             actions.sendKeys(Keys.PAGE_DOWN).perform();
+            ReusableMethods.waitFor(2);
             tradylinnPage.incelemelerButonu.click();
             extentTest.info("İncelemeler butonuna tiklandi");
 
             tradylinnPage.productReviewsButonu.click();
             extentTest.info("Product reviews butonuna tiklandi");
 
-            tradylinnPage.kullaniciBilgisi.isDisplayed();
+            Assert.assertTrue(tradylinnPage.kullaniciBilgisi.isDisplayed());
             extentTest.info("Kullanici bilgisinin görülebilir oldugu test edildi");
 
-            tradylinnPage.kullaniciYorumu.isDisplayed();
+            Assert.assertTrue(tradylinnPage.kullaniciYorumu.isDisplayed());
             extentTest.info("Kullanici yorumunun görülebilir oldugu test edildi");
+
 
 
 
