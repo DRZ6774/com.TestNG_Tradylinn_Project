@@ -1,38 +1,32 @@
-package utulities;
+package utilities;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
-public class CrossDriver {
+import java.time.Duration;
+
+public class Driver {
 
     /*
- POM'de Driver icin TestBase class'ina extends etmek yerine
- Driver class'indan static method'lar kullanarak
- driver olusturup, ilgili ayarlarin yapilmasi
- ve en sonda driver'in kapatilmasi tercih edilmistir.
-  */
+  POM'de Driver icin TestBase class'ina extends etmek yerine
+  Driver class'indan static method'lar kullanarak
+  driver olusturup, ilgili ayarlarin yapilmasi
+  ve en sonda driver'in kapatilmasi tercih edilmistir.
+   */
 
-    private CrossDriver(){}
+    private Driver(){
 
-
+    }
     static WebDriver driver;
-    public static WebDriver getDriver(String browser){
-
-        browser = (browser == null) ? ConfigReader.getProperty("browser") : browser;
-
+    public static WebDriver getDriver(){
         if (driver==null) {
-            switch (browser){
+            switch (ConfigReader.getProperty("browser")){
                 case "chrome" :
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver();
-                    break;
-                case "edge" :
-                    WebDriverManager.edgedriver().setup();
-                    driver = new EdgeDriver();
                     break;
                 case "safari" :
                     WebDriverManager.safaridriver().setup();
@@ -46,6 +40,8 @@ public class CrossDriver {
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver();
             }
+            driver.manage().window().maximize();
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         }
         return driver;
     }
@@ -56,3 +52,5 @@ public class CrossDriver {
         }
     }
 }
+
+
