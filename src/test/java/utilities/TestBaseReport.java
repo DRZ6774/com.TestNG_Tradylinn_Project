@@ -1,4 +1,4 @@
-package utulities;
+package utilities;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -14,7 +14,7 @@ import java.util.Date;
 
 public class TestBaseReport {
 
-    protected static ExtentReports extentReports; //extent report'a ilk atamayi yapar
+    public static ExtentReports extentReports; //extent report'a ilk atamayi yapar
     protected static ExtentTest extentTest; // test pass veya failed gibi bilgileri kaydeder. Ayrica ekran resmi icin de kullaniriz
     protected static ExtentHtmlReporter extentHtmlReporter; // Html raporu duzenler
     // Test işlemine başlamadan hemen önce (test methodundan önce değil, tüm test işleminden önce)
@@ -30,7 +30,8 @@ public class TestBaseReport {
         // İstediğiniz bilgileri buraya ekeyebiliyorsunuz.
         extentReports.setSystemInfo("Enviroment","QA");
         extentReports.setSystemInfo("Browser", ConfigReader.getProperty("browser")); // chrome, firefox
-        extentReports.setSystemInfo("Automation Engineer", "Abdurrahman");
+        extentReports.setSystemInfo("Automation Engineer", "Sevda");
+        extentHtmlReporter.config().setDocumentTitle("Son Test");
         extentHtmlReporter.config().setReportName("TestNG Reports");
     }
     // Her test methodundan sonra eğer testte hata varsa, ekran görüntüsü alıp rapora ekliyor
