@@ -4,11 +4,9 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.MainPage;
 import pages.RegistrationPage;
+import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.TestBaseReport;
-import utulities.ConfigReader;
-import utulities.Driver;
-import utulities.TestBaseReport;
 
 public class TC_001_SaticiOlarakKayitOlma extends TestBaseReport {
 
@@ -24,7 +22,7 @@ public class TC_001_SaticiOlarakKayitOlma extends TestBaseReport {
                 createTest("Vendor olarak kayıt icin ‘Become a vendor’ butonu ile navigate ediniz");
 
 
-       Driver.getDriver().get(Conf.getProperty("mainPage"));
+        Driver.getDriver().get(ConfigReader.getProperty("mainPage"));
 
         extentTest.info("https://tradylinn.com/ sitesine gidiniz.");
 

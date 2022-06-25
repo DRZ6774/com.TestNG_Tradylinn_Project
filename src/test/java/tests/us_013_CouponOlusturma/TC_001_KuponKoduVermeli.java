@@ -1,17 +1,14 @@
 package tests.us_013_CouponOlusturma;
 
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.*;
-import utulities.ConfigReader;
-import utulities.Driver;
-import utulities.ReusableMethods;
-import utulities.TestBaseReport;
-
-import javax.swing.*;
+import utilities.ConfigReader;
+import utilities.Driver;
+import utilities.ReusableMethods;
+import utilities.TestBaseReport;
 
 public class TC_001_KuponKoduVermeli extends TestBaseReport {
 

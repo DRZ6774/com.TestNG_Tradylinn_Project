@@ -6,10 +6,10 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.*;
-import utulities.ConfigReader;
-import utulities.Driver;
-import utulities.ReusableMethods;
-import utulities.TestBaseReport;
+import utilities.ConfigReader;
+import utilities.Driver;
+import utilities.ReusableMethods;
+import utilities.TestBaseReport;
 
 public class TC_003_IndirimSekli_Discount extends TestBaseReport {
 
