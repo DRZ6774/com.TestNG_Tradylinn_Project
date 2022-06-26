@@ -7,6 +7,7 @@ import org.testng.asserts.SoftAssert;
 import pages.UrunPage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
 import utilities.TestBaseReport;
 
 public class US06_TC10 extends TestBaseReport {
@@ -15,7 +16,7 @@ public class US06_TC10 extends TestBaseReport {
     Actions actions=new Actions(Driver.getDriver());
 
     @Test
-    public void US06_TC10Testi() throws InterruptedException {
+    public void US06_TC10Testi() {
         extentTest=extentReports.createTest("US06_TC10","Categories-taki & aksesuar butonu secilebilmeli");
 
         //1- https://tradylinn.com/ sitesine gidiniz
@@ -33,7 +34,7 @@ public class US06_TC10 extends TestBaseReport {
         extentTest.info("Gecerli password girildi");
 
         //4-hesabim butonuna tiklayin
-        Thread.sleep(10000);
+        ReusableMethods.waitFor(10);
         urunPage.hesabim.click();
         extentTest.info("Hesabim butonuna tiklandi");
 
@@ -51,7 +52,7 @@ public class US06_TC10 extends TestBaseReport {
 
         //7-Categories-taki & aksesuar secin
         actions.sendKeys(Keys.PAGE_DOWN).perform();
-        Thread.sleep(2000);
+        ReusableMethods.waitFor(2);
         urunPage.takiAksesuarButton.click();
         extentTest.info("Categories-taki & aksesuar butonuna tiklandi");
 

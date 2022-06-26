@@ -7,6 +7,7 @@ import org.testng.asserts.SoftAssert;
 import pages.UrunPage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
 import utilities.TestBaseReport;
 
 public class US07_TC03 extends TestBaseReport {
@@ -15,7 +16,7 @@ public class US07_TC03 extends TestBaseReport {
     Actions actions=new Actions(Driver.getDriver());
 
     @Test
-    public void US07_TC03Testi() throws InterruptedException {
+    public void US07_TC03Testi() {
         extentTest=extentReports.createTest("US07_TC03","Product brands-NodeJS butonu secilebilmeli");
 
         //1- https://tradylinn.com/ sitesine gidiniz
@@ -33,7 +34,7 @@ public class US07_TC03 extends TestBaseReport {
         extentTest.info("Gecerli password girildi");
 
         //4-hesabim butonuna tiklayin
-        Thread.sleep(10000);
+        ReusableMethods.waitFor(10);
         urunPage.hesabim.click();
         extentTest.info("Hesabim butonuna tiklandi");
 
@@ -51,7 +52,7 @@ public class US07_TC03 extends TestBaseReport {
 
         //8-Product brands-NodeJS secin
         actions.sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).perform();
-        Thread.sleep(2000);
+        ReusableMethods.waitFor(2);
         urunPage.nodeJsButton.click();
         extentTest.info("Product brands-NodeJS butonuna tiklandi");
 
