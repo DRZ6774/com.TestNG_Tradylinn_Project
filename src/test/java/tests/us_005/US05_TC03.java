@@ -7,10 +7,11 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pages.UrunPage;
-import utulities.ConfigReader;
-import utulities.Driver;
-import utulities.ReusableMethods;
-import utulities.TestBaseReport;
+import utilities.ConfigReader;
+import utilities.Driver;
+import utilities.ReusableMethods;
+import utilities.TestBaseReport;
+
 
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
