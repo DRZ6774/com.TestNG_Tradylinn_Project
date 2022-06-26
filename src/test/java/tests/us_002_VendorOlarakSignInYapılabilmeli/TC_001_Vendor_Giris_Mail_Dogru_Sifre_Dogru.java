@@ -12,7 +12,7 @@ public class TC_001_Vendor_Giris_Mail_Dogru_Sifre_Dogru extends TestBaseReport {
     @Test
     public static void emailGiris() {
         extentTest = extentReports.
-                createTest("Vendor olarak giriş(Email dogru,sifre dogru)");
+                createTest("Vendor  olarak giriş(Email dogru,sifre dogru)");
 
         MainPage mainPage = new MainPage();
 
