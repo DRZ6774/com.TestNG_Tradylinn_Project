@@ -6,9 +6,9 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pages.UrunPage;
-import utulities.ConfigReader;
-import utulities.Driver;
-import utulities.TestBaseReport;
+import utilities.ConfigReader;
+import utilities.Driver;
+import utilities.TestBaseReport;
 
 public class US05_TC04 extends TestBaseReport {
     UrunPage urunPage = new UrunPage();

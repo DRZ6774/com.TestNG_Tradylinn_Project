@@ -4,6 +4,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.GmailPage;
 import pages.MainPage;
 import pages.RegistrationPage;
 import utilities.ConfigReader;
