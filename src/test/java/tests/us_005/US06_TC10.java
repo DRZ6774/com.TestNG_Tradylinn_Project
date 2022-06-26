@@ -9,14 +9,14 @@ import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.TestBaseReport;
 
-public class US05_TC04 extends TestBaseReport {
+public class US06_TC10 extends TestBaseReport {
     UrunPage urunPage = new UrunPage();
     SoftAssert softAssert = new SoftAssert();
     Actions actions=new Actions(Driver.getDriver());
 
     @Test
-    public void US05_TC04Testi() throws InterruptedException {
-        extentTest=extentReports.createTest("US05_TC04","short description ve Description'a aciklama girilebilmeli ve etkin olmali");
+    public void US06_TC10Testi() throws InterruptedException {
+        extentTest=extentReports.createTest("US06_TC10","Categories-taki & aksesuar butonu secilebilmeli");
 
         //1- https://tradylinn.com/ sitesine gidiniz
         Driver.getDriver().get(ConfigReader.getProperty("tradyUrl"));
@@ -33,7 +33,7 @@ public class US05_TC04 extends TestBaseReport {
         extentTest.info("Gecerli password girildi");
 
         //4-hesabim butonuna tiklayin
-        Thread.  sleep(10000);
+        Thread.sleep(10000);
         urunPage.hesabim.click();
         extentTest.info("Hesabim butonuna tiklandi");
 
@@ -49,27 +49,15 @@ public class US05_TC04 extends TestBaseReport {
         urunPage.yeniEkle.click();
         extentTest.info("Yeni Ekle butonuna tiklandi");
 
-        //8-short description girin
+        //7-Categories-taki & aksesuar secin
         actions.sendKeys(Keys.PAGE_DOWN).perform();
-        Driver.getDriver().switchTo().frame(urunPage.ShortIframe);
-        urunPage.ShortDescription.sendKeys("Tabak");
-        extentTest.info("Short description girildi");
+        Thread.sleep(2000);
+        urunPage.takiAksesuarButton.click();
+        extentTest.info("Categories-taki & aksesuar butonuna tiklandi");
 
-        //9-short description etkin oldugunu test edin
-        softAssert.assertTrue(urunPage.ShortDescription.isEnabled());
-        Driver.getDriver().switchTo().parentFrame();
-        extentTest.info("Short description etkin oldugu test edildi");
-
-        //10-Description girin
-        Driver.getDriver().switchTo().frame(urunPage.DescriptionIframe);
-        urunPage.Description.sendKeys("Porselen");
-        extentTest.info("Description girildi");
-
-        //11-Description etkin oldugunu test edin
-        softAssert.assertTrue(urunPage.Description.isEnabled());
-        Driver.getDriver().switchTo().parentFrame();
-        extentTest.info("Description etkin oldugu test edildi");
-        extentTest.pass("short description ve Description'a aciklama girilebiliyor ve etkin durumda");
-
+        //8-Categories-taki & aksesuar secilebilir oldugunu test edin
+        softAssert.assertTrue(urunPage.takiAksesuarButton.isSelected());
+        extentTest.info("Categories-taki & aksesuar  butonunun secilebilir oldugu test edildi");
+        extentTest.pass("Categories-taki & aksesuar butonu secilebiliyor");
     }
 }
