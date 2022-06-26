@@ -16,7 +16,7 @@ public class US05_TC04 extends TestBaseReport {
 
     @Test
     public void US05_TC04Testi() throws InterruptedException {
-        extentTest=extentReports.createTest("US05_TC04","short description ve Description'a aciklama girilebilmeli ve etkin olmali");
+        extentTest=extentReports.createTest("US05_TC04","short description ve Description'a text girilebilmeli ve etkin olmali");
 
         //1- https://tradylinn.com/ sitesine gidiniz
         Driver.getDriver().get(ConfigReader.getProperty("tradyUrl"));
@@ -69,7 +69,7 @@ public class US05_TC04 extends TestBaseReport {
         softAssert.assertTrue(urunPage.Description.isEnabled());
         Driver.getDriver().switchTo().parentFrame();
         extentTest.info("Description etkin oldugu test edildi");
-        extentTest.pass("short description ve Description'a aciklama girilebiliyor ve etkin durumda");
+        extentTest.pass("short description ve Description'a text girilebiliyor ve etkin durumda");
 
     }
 }

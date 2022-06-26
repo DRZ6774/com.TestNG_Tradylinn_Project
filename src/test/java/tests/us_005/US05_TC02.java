@@ -60,7 +60,7 @@ public class US05_TC02 extends TestBaseReport {
         urunPage.downloadableButton.click();
         softAssert.assertTrue(urunPage.downloadableButton.isSelected());
         extentTest.info("DownloadableButtonButton Secilebilir oldugu test edildi");
-        extentTest.pass("Virtualbutton ve Downloadablebutton secilebilir durumda");
+        extentTest.pass("Virtualbutton ve Downloadable button secilebilir durumda");
 
     }
 }
