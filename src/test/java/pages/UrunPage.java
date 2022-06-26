@@ -78,7 +78,7 @@ public class UrunPage {
     @FindBy (xpath = "(//input[@class='wcfm-checkbox checklist_type_product_cat '])[11]")
     public WebElement evYasamButton;
 
-    @FindBy (xpath = "(//input[@class='wcfm-checkbox checklist_type_product_cat '])[17]")
+    @FindBy (xpath = "(//input[@class='wcfm-checkbox checklist_type_product_cat '])[18]")
     public WebElement indirimliUrunlerButton;
 
     @FindBy (xpath = "(//input[@class='wcfm-checkbox checklist_type_product_cat '])[19]")
@@ -87,37 +87,37 @@ public class UrunPage {
     @FindBy (xpath = "(//input[@class='wcfm-checkbox checklist_type_product_cat '])[21]")
     public WebElement kozmetikKisiselButton;
 
-    @FindBy (xpath = "(//input[@class='wcfm-checkbox checklist_type_product_cat '])[22]")
+    @FindBy (xpath = "(//input[@class='wcfm-checkbox checklist_type_product_cat '])[24]")
     public WebElement modaGiyimButton;
 
-    @FindBy (xpath = "(//input[@class='wcfm-checkbox checklist_type_product_cat '])[33]")
+    @FindBy (xpath = "(//input[@class='wcfm-checkbox checklist_type_product_cat '])[35]")
     public WebElement takiAksesuarButton;
 
-    @FindBy (xpath = "(//input[@class='wcfm-checkbox checklist_type_product_cat '])[30]")
+    @FindBy (xpath = "(//input[@class='wcfm-checkbox checklist_type_product_cat '])[32]")
     public WebElement oyuncakButton;
 
-    @FindBy (xpath = "(//input[@class='wcfm-checkbox checklist_type_product_cat '])[36]")
+    @FindBy (xpath = "(//input[@class='wcfm-checkbox checklist_type_product_cat '])[38]")
     public WebElement yeniUrunlerButton;
 
-    @FindBy (xpath = "(//input[@class='wcfm-checkbox checklist_type_product_brand '])[5]")
+    @FindBy (xpath = "(//input[@class='wcfm-checkbox checklist_type_product_brand '])[7]")
     public WebElement elegantAutoGroupButton;
 
-    @FindBy (xpath = "(//input[@class='wcfm-checkbox checklist_type_product_brand '])[8]")
+    @FindBy (xpath = "(//input[@class='wcfm-checkbox checklist_type_product_brand '])[10]")
     public WebElement greenGrassButton;
 
-    @FindBy (xpath = "(//input[@class='wcfm-checkbox checklist_type_product_brand '])[16]")
+    @FindBy (xpath = "(//input[@class='wcfm-checkbox checklist_type_product_brand '])[18]")
     public WebElement nodeJsButton;
 
-    @FindBy (xpath = "(//input[@class='wcfm-checkbox checklist_type_product_brand '])[17]")
+    @FindBy (xpath = "(//input[@class='wcfm-checkbox checklist_type_product_brand '])[19]")
     public WebElement nS8Button;
 
-    @FindBy (xpath = "(//input[@class='wcfm-checkbox checklist_type_product_brand '])[20]")
+    @FindBy (xpath = "(//input[@class='wcfm-checkbox checklist_type_product_brand '])[22]")
     public WebElement redButton;
 
-    @FindBy (xpath = "(//input[@class='wcfm-checkbox checklist_type_product_brand '])[26]")
+    @FindBy (xpath = "(//input[@class='wcfm-checkbox checklist_type_product_brand '])[28]")
     public WebElement skysuiteTechButton;
 
-    @FindBy (xpath = "(//input[@class='wcfm-checkbox checklist_type_product_brand '])[28]")
+    @FindBy (xpath = "(//input[@class='wcfm-checkbox checklist_type_product_brand '])[30]")
     public WebElement sterlingButton;
 
     @FindBy (xpath = "//iframe[@id='excerpt_ifr']")

@@ -7,6 +7,7 @@ import org.testng.asserts.SoftAssert;
 import pages.UrunPage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
 import utilities.TestBaseReport;
 
 public class US05_TC02 extends TestBaseReport {
@@ -52,6 +53,7 @@ public class US05_TC02 extends TestBaseReport {
         //8-Virtual ve Downloadable seceneklerine sirayla tiklayip sonrasinda secilebilir
         //oldugunu test edin
         actions.sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).perform();
+        ReusableMethods.waitFor(2);
         urunPage.virtualButton.click();
         extentTest.info("VirtualButton tiklandi");
         softAssert.assertTrue(urunPage.virtualButton.isSelected());
