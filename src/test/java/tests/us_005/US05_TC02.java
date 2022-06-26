@@ -16,7 +16,7 @@ public class US05_TC02 extends TestBaseReport {
     Actions actions=new Actions(Driver.getDriver());
 
     @Test
-    public void US05_TC02Testi() throws InterruptedException {
+    public void US05_TC02Testi() {
         extentTest=extentReports.createTest("US05_TC02","Virtual ve Downloadable secenekleri secilebilir olmali");
 
         //1- https://tradylinn.com/ sitesine gidiniz
@@ -34,7 +34,7 @@ public class US05_TC02 extends TestBaseReport {
         extentTest.info("Gecerli password girildi");
 
         //4-hesabim butonuna tiklayin
-        Thread.sleep(10000);
+        ReusableMethods.waitFor(10);
         urunPage.hesabim.click();
         extentTest.info("Hesabim butonuna tiklandi");
 
