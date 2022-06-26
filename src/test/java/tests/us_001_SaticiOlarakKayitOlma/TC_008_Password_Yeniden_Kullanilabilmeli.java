@@ -1,13 +1,11 @@
 package tests.us_001_SaticiOlarakKayitOlma;
 
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.MainPage;
-import pages.RegistrationPage;
-import utulities.ConfigReader;
-import utulities.Driver;
-import utulities.TestBaseReport;
+import utilities.ConfigReader;
+import utilities.Driver;
+import utilities.TestBaseReport;
 
 public class TC_008_Password_Yeniden_Kullanilabilmeli extends TestBaseReport {
 

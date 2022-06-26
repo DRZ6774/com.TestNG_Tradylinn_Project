@@ -4,9 +4,9 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pages.MainPage;
 import pages.RegistrationPage;
-import utulities.ConfigReader;
-import utulities.Driver;
-import utulities.TestBaseReport;
+import utilities.ConfigReader;
+import utilities.Driver;
+import utilities.TestBaseReport;
 
 public class TC_002_RegistrationSayfasındaEmailPassWordVeConfirmPasswordOlması extends TestBaseReport {
 
