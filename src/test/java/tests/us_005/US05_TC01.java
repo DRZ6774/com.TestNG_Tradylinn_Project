@@ -7,6 +7,7 @@ import org.testng.asserts.SoftAssert;
 import pages.UrunPage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
 import utilities.TestBaseReport;
 
 
@@ -19,7 +20,7 @@ public class US05_TC01 extends TestBaseReport {
 
 
     @Test
-    public void US05_TC01Testi() throws InterruptedException {
+    public void US05_TC01Testi() {
        extentTest=extentReports.createTest("US05_TC01","Urun listesi ve basliklar gorunuyor olmali");
         //1- https://tradylinn.com/ sitesine gidiniz
         Driver.getDriver().get(ConfigReader.getProperty("tradyUrl"));
@@ -36,7 +37,7 @@ public class US05_TC01 extends TestBaseReport {
         extentTest.info("Gecerli password girildi");
 
         //4-hesabim butonuna tiklayin
-        Thread.sleep(3000);
+        ReusableMethods.waitFor(3);
         urunPage.hesabim.click();
         extentTest.info("Hesabim butonuna tiklandi");
 
