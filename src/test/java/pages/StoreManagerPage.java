@@ -14,4 +14,14 @@ public class StoreManagerPage {
     //MEHMET MAGDEN
     @FindBy (xpath = "//a[@href='https://tradylinn.com/store-manager/coupons/']")
     public WebElement kuponlarSekmesi;
+
+    //DIRAZ
+    @FindBy(xpath = "//span[@ class='wcfmfa fa-database']")
+    public  WebElement stockManagerSekmesi;
+
+    @FindBy(xpath = "(//input[@ type='number'])[1]")
+    public WebElement stockQuantity;
+
+    @FindBy(xpath = "(//select[@ class='wcfm-select'])[2]")
+    public WebElement backordersAlani;
 }

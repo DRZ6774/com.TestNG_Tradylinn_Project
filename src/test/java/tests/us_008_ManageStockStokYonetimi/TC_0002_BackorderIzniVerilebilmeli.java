@@ -1,6 +1,5 @@
 package tests.us_008_ManageStockStokYonetimi;
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.MainPage;
 import pages.RegistrationPage;
@@ -10,17 +9,16 @@ import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.TestBaseReport;
 
-public class TC_0001_UrunMiktariStockBelirlenmeli extends TestBaseReport {
-
+public class TC_0002_BackorderIzniVerilebilmeli extends TestBaseReport {
     @Test
-    public void testTC_0001()throws InterruptedException {
+    public void testTC_0002() throws InterruptedException {
 
-        MainPage mainPage=new MainPage();
-        RegistrationPage registrationPage=new RegistrationPage();
-        UrunPage urunPage =new UrunPage();
-        StoreManagerPage storeManagerPage=new StoreManagerPage();
+        MainPage mainPage = new MainPage();
+        RegistrationPage registrationPage = new RegistrationPage();
+        UrunPage urunPage = new UrunPage();
+        StoreManagerPage storeManagerPage = new StoreManagerPage();
 
-        extentTest=extentReports.
+        extentTest = extentReports.
                 createTest("Urun miktarı stock belirlenmeli");
         //1-https://tradylinn.com/ sitesine gidiniz.
         Driver.getDriver().get(ConfigReader.getProperty("mainPage"));
@@ -69,10 +67,8 @@ public class TC_0001_UrunMiktariStockBelirlenmeli extends TestBaseReport {
         storeManagerPage.stockManagerSekmesi.click();
         extentTest.info("stockManagerSekmesi tiklandi");
 
-        //12-stockQuantity manuel urun-stok miktari giriniz.
-        storeManagerPage.stockQuantity.sendKeys();
-        extentTest.info("stockQuantity manuel urun miktari-stok belirlendi");
-
-
+        //12-backordersAlanina tıklayınız.
+        storeManagerPage.backordersAlani.click();
+        extentTest.info("backordersAlanina tıklandi");
     }
 }
