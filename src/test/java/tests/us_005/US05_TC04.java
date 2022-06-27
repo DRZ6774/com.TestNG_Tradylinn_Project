@@ -1,14 +1,14 @@
 package tests.us_005;
 
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pages.UrunPage;
-import utulities.ConfigReader;
-import utulities.Driver;
-import utulities.TestBaseReport;
+import utilities.ConfigReader;
+import utilities.Driver;
+import utilities.ReusableMethods;
+import utilities.TestBaseReport;
 
 public class US05_TC04 extends TestBaseReport {
     UrunPage urunPage = new UrunPage();
@@ -16,8 +16,8 @@ public class US05_TC04 extends TestBaseReport {
     Actions actions=new Actions(Driver.getDriver());
 
     @Test
-    public void US05_TC04Testi() throws InterruptedException {
-        extentTest=extentReports.createTest("US05_TC04","short description ve Description'a aciklama girilebilmeli ve etkin olmali");
+    public void US05_TC04Testi() {
+        extentTest=extentReports.createTest("US05_TC04","short description ve Description'a text girilebilmeli ve etkin olmali");
 
         //1- https://tradylinn.com/ sitesine gidiniz
         Driver.getDriver().get(ConfigReader.getProperty("tradyUrl"));
@@ -34,7 +34,7 @@ public class US05_TC04 extends TestBaseReport {
         extentTest.info("Gecerli password girildi");
 
         //4-hesabim butonuna tiklayin
-        Thread.  sleep(10000);
+        ReusableMethods.waitFor(10);
         urunPage.hesabim.click();
         extentTest.info("Hesabim butonuna tiklandi");
 
@@ -70,7 +70,7 @@ public class US05_TC04 extends TestBaseReport {
         softAssert.assertTrue(urunPage.Description.isEnabled());
         Driver.getDriver().switchTo().parentFrame();
         extentTest.info("Description etkin oldugu test edildi");
-        extentTest.pass("short description ve Description'a aciklama girilebiliyor ve etkin durumda");
+        extentTest.pass("short description ve Description'a text girilebiliyor ve etkin durumda");
 
     }
 }

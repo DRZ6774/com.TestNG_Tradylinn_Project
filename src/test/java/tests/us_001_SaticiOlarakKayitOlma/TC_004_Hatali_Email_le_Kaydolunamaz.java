@@ -6,9 +6,9 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.MainPage;
 import pages.RegistrationPage;
-import utulities.ConfigReader;
-import utulities.Driver;
-import utulities.TestBaseReport;
+import utilities.ConfigReader;
+import utilities.Driver;
+import utilities.TestBaseReport;
 
 public class TC_004_Hatali_Email_le_Kaydolunamaz  extends TestBaseReport {
 

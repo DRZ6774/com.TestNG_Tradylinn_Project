@@ -1,14 +1,14 @@
 package tests.us_005;
 
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pages.UrunPage;
-import utulities.ConfigReader;
-import utulities.Driver;
-import utulities.TestBaseReport;
+import utilities.ConfigReader;
+import utilities.Driver;
+import utilities.ReusableMethods;
+import utilities.TestBaseReport;
 
 public class US05_TC02 extends TestBaseReport {
     UrunPage urunPage =new UrunPage();
@@ -16,7 +16,7 @@ public class US05_TC02 extends TestBaseReport {
     Actions actions=new Actions(Driver.getDriver());
 
     @Test
-    public void US05_TC02Testi() throws InterruptedException {
+    public void US05_TC02Testi() {
         extentTest=extentReports.createTest("US05_TC02","Virtual ve Downloadable secenekleri secilebilir olmali");
 
         //1- https://tradylinn.com/ sitesine gidiniz
@@ -34,7 +34,7 @@ public class US05_TC02 extends TestBaseReport {
         extentTest.info("Gecerli password girildi");
 
         //4-hesabim butonuna tiklayin
-        Thread.sleep(10000);
+        ReusableMethods.waitFor(10);
         urunPage.hesabim.click();
         extentTest.info("Hesabim butonuna tiklandi");
 
@@ -53,6 +53,7 @@ public class US05_TC02 extends TestBaseReport {
         //8-Virtual ve Downloadable seceneklerine sirayla tiklayip sonrasinda secilebilir
         //oldugunu test edin
         actions.sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).perform();
+        ReusableMethods.waitFor(2);
         urunPage.virtualButton.click();
         extentTest.info("VirtualButton tiklandi");
         softAssert.assertTrue(urunPage.virtualButton.isSelected());
@@ -61,7 +62,7 @@ public class US05_TC02 extends TestBaseReport {
         urunPage.downloadableButton.click();
         softAssert.assertTrue(urunPage.downloadableButton.isSelected());
         extentTest.info("DownloadableButtonButton Secilebilir oldugu test edildi");
-        extentTest.pass("Virtualbutton ve Downloadablebutton secilebilir durumda");
+        extentTest.pass("Virtualbutton ve Downloadable button secilebilir durumda");
 
     }
 }
