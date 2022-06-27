@@ -7,6 +7,7 @@ import org.testng.asserts.SoftAssert;
 import pages.UrunPage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
 import utilities.TestBaseReport;
 
 public class US07_TC02 extends TestBaseReport {
@@ -15,7 +16,7 @@ public class US07_TC02 extends TestBaseReport {
     Actions actions=new Actions(Driver.getDriver());
 
     @Test
-    public void US07_TC02Testi() throws InterruptedException {
+    public void US07_TC02Testi()  {
         extentTest=extentReports.createTest("US07_TC02","Product brands-Green Grass butonu secilebilmeli");
 
         //1- https://tradylinn.com/ sitesine gidiniz
@@ -33,7 +34,7 @@ public class US07_TC02 extends TestBaseReport {
         extentTest.info("Gecerli password girildi");
 
         //4-hesabim butonuna tiklayin
-        Thread.sleep(10000);
+        ReusableMethods.waitFor(10);
         urunPage.hesabim.click();
         extentTest.info("Hesabim butonuna tiklandi");
 
@@ -51,7 +52,7 @@ public class US07_TC02 extends TestBaseReport {
 
         //8-Product brands-Green Grass secin
         actions.sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).perform();
-        Thread.sleep(2000);
+        ReusableMethods.waitFor(2);
         urunPage.greenGrassButton.click();
         extentTest.info("Product brands-Green Grass butonuna tiklandi");
 
