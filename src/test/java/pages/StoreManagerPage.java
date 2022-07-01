@@ -16,12 +16,19 @@ public class StoreManagerPage {
     public WebElement kuponlarSekmesi;
 
     //DIRAZ
-    @FindBy(xpath = "//span[@ class='wcfmfa fa-database']")
-    public  WebElement stockManagerSekmesi;
+    @FindBy(xpath = "//input[@name='manage_stock']")
+    public  WebElement manageStock;
 
-    @FindBy(xpath = "(//input[@ type='number'])[1]")
-    public WebElement stockQuantity;
+    @FindBy(xpath = "//input[@name='stock_qty']")
+    public WebElement stockQty;
 
-    @FindBy(xpath = "(//select[@ class='wcfm-select'])[2]")
-    public WebElement backordersAlani;
+    @FindBy(xpath = "(//a[@ href='https://tradylinn.com/store-manager/products-manage/10154'])[2]")
+    public WebElement tshirt;
+
+    @FindBy(xpath = "//input[@ type='submit']")
+    public WebElement submitButonu;
+
+
+       @FindBy(xpath = "//select[@ id='backorders'] ")
+    public WebElement allowBackorders;
 }

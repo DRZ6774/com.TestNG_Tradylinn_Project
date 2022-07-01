@@ -1,78 +1,104 @@
 package tests.us_008_ManageStockStokYonetimi;
-
+import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.MainPage;
-import pages.RegistrationPage;
 import pages.StoreManagerPage;
 import pages.UrunPage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
 import utilities.TestBaseReport;
 
 public class TC_0001_UrunMiktariStockBelirlenmeli extends TestBaseReport {
 
     @Test
-    public void testTC_0001()throws InterruptedException {
+    public void testTC_0001() {
 
-        MainPage mainPage=new MainPage();
-        RegistrationPage registrationPage=new RegistrationPage();
-        UrunPage urunPage =new UrunPage();
-        StoreManagerPage storeManagerPage=new StoreManagerPage();
+        MainPage mainPage;
+        UrunPage urunPage ;
+        StoreManagerPage storeManagerPage;
+        JavascriptExecutor jse;
 
-        extentTest=extentReports.
-                createTest("Urun miktarı stock belirlenmeli");
+        extentTest = extentReports.createTest("Urun miktarı stock belirlenmeli");
+
+        mainPage=new MainPage();
+        urunPage =new UrunPage();
+        storeManagerPage=new StoreManagerPage();
+        jse = (JavascriptExecutor)Driver.getDriver();
+
         //1-https://tradylinn.com/ sitesine gidiniz.
-        Driver.getDriver().get(ConfigReader.getProperty("mainPage"));
-        extentTest.info("https://tradylinn.com/ sitesine gidiniz.");
+        ReusableMethods.waitFor(5);
+        Driver.getDriver().navigate().to(ConfigReader.getProperty("mainPage"));
+        extentTest.info("https://www.tradylinn.com sitesine gidildi");
 
         //2-Giriş yap/üye ol butonuna basınız.
+        ReusableMethods.waitFor(5);
         mainPage.girisYap_UyeOlSekmesi.click();
-        extentTest.info("Giriş yap/üye ol butonuna basınız.");
+        extentTest.info("Girisyap/Uye ol sekmesine tiklandi");
 
-        //3-Üye ol sekmesine basiniz.
-        mainPage.uyeOlSelmesi.click();
-        extentTest.info("Üye ol sekmesine basiniz.");
+        //3-Gecerli username giriniz.
+        ReusableMethods.waitFor(5);
+        mainPage.girisEmail.sendKeys(ConfigReader.getProperty("validUserName"));
+        extentTest.info("Gecerli username girildi");
 
-        //4-signUp as a vendor sekmesine basınız.
-        mainPage.signUpAsAVendorLinki.click();
-        extentTest.info("signUp as a vendor sekmesine basınız.");
+        //4-Gecerli password giriniz.
+        ReusableMethods.waitFor(5);
+        mainPage.girisSifre.sendKeys(ConfigReader.getProperty("validPassword"));
+        extentTest.info("Gecerli password girildi");
 
-        //5-Uygun email ve sifre giriniz.
-        registrationPage.emailSekmesi.sendKeys(ConfigReader.getProperty("mail1"));
-        registrationPage.passwordSekmesi.sendKeys(ConfigReader.getProperty("sifreMail1"));
-        extentTest.info("Uygun email ve sifre giriniz.");
+        //5-Giris butonuna basınız.
+        ReusableMethods.waitFor(10);
+        mainPage.girisButonu.click();
+        extentTest.info("Giris butonuna tıklandı");
 
-        //6-Sifre konfirmasyonu için şifreyi confirm password sekmesine yeniden giriniz.
-        registrationPage.confirmPasswordSekmesi.sendKeys(ConfigReader.getProperty("sifreMail1"));
-        extentTest.info("Sifre konfirmasyonu için şifreyi confirm password sekmesine yeniden giriniz.");
-        Thread.sleep(7000);
-
-        //7-Register butonuna basınız.
-        registrationPage.registerButonu.click();
-        extentTest.info("Register butonuna basınız.");
-
-        //8-hesabim butonuna tiklayin
-        Thread.sleep(3000);
-        urunPage.hesabim.click();
+        //6-hesabim butonuna tiklayin
+        ReusableMethods.waitFor(10);
+        jse.executeScript("arguments[0].scrollIntoView()",  urunPage.hesabim);
+        jse.executeScript("arguments[0].click();",urunPage.hesabim );
         extentTest.info("Hesabim butonuna tiklandi");
 
-        //9-Store Manager sekmesine tiklayin
-        urunPage.storeManager.click();
+        //7-Store Manager sekmesine tiklayin
+        ReusableMethods.waitFor(5);
+        jse.executeScript("arguments[0].scrollIntoView()",  urunPage.storeManager);
+        jse.executeScript("arguments[0].click();",urunPage.storeManager );
         extentTest.info("Store manager sekmesine tiklandi");
 
-        //10- urunler sekmesine tiklayin
-        urunPage.urun.click();
+        //8-Urunler sekmesine tiklayin
+        ReusableMethods.waitFor(5);
+        jse.executeScript("arguments[0].scrollIntoView()",  urunPage.urun);
+        jse.executeScript("arguments[0].click();",urunPage.urun );
         extentTest.info("Urunler sekmesine tiklandi");
 
-        //11-stockManagerSekmesi tiklayiniz.
-        storeManagerPage.stockManagerSekmesi.click();
-        extentTest.info("stockManagerSekmesi tiklandi");
+        //9- t-shirt ürününe tıklayınız
+        ReusableMethods.waitFor(5);
+        jse.executeScript("arguments[0].scrollIntoView()",  storeManagerPage.tshirt);
+        jse.executeScript("arguments[0].click();",storeManagerPage.tshirt );
+        //storeManagerPage.tshirt.click();
+        extentTest.info("T-shirt butonuna tıklandı");
 
-        //12-stockQuantity manuel urun-stok miktari giriniz.
-        storeManagerPage.stockQuantity.sendKeys();
-        extentTest.info("stockQuantity manuel urun miktari-stok belirlendi");
+        //10-managestock sekmesi tiklayiniz.
+        ReusableMethods.waitFor(3);
+        jse.executeScript("arguments[0].scrollIntoView()",  storeManagerPage.manageStock);
+        jse.executeScript("arguments[0].click();",storeManagerPage.manageStock );
+        jse.executeScript("arguments[0].scrollIntoView()",  storeManagerPage.manageStock);
+        jse.executeScript("arguments[0].click();",storeManagerPage.manageStock );
+        extentTest.info("manegeStock sekmesi tiklandi");
 
+        //11-stockQty alanına urun-stok miktari giriniz.
+        ReusableMethods.waitFor(5);
+        storeManagerPage.stockQty.clear();
+        storeManagerPage.stockQty.sendKeys("10");
+        extentTest.info("stockQty alanına urun miktari-stok girildi");
 
+        //12-submit butonuna tıklanarak kaydediniz.
+        ReusableMethods.waitFor(5);
+        jse.executeScript("arguments[0].scrollIntoView()",  storeManagerPage.submitButonu);
+        jse.executeScript("arguments[0].click();",storeManagerPage.submitButonu );
+        extentTest.info("submit butonuna tıklanarak kaydedildi");
+
+        //13-stockQty alanına urun-stok miktarini kontrol ediniz.
+        Assert.assertTrue(storeManagerPage.stockQty.isDisplayed());
+        extentTest.info("stockQty alanına urun-stok miktarini kontrol edildi");
     }
 }
